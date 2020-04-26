@@ -12,6 +12,8 @@
 
     <groupId>guru.springframework</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
 
     <modules>
         <module>pet-clinic-data</module>
@@ -19,7 +21,6 @@
     </modules>
 
 
-    <version>0.0.1</version>
     <name>sfg-pet-clinic</name>
     <description>SFG Pet Clinic Project</description>
 
@@ -44,8 +45,7 @@
     </build>
 
     <scm>
-        <developerConnection>scm:git:git@https://github.com/lakemaster/sfg-pet-clinic.git</developerConnection>
-      <tag>sfg-pet-clinic-0.0.1</tag>
+        <developerConnection>scm:git:https://github.com/lakemaster/sfg-pet-clinic</developerConnection>
   </scm>
 
 </project>
