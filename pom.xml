@@ -45,7 +45,7 @@
     </build>
 
     <scm>
-        <developerConnection>scm:git:git@github.com/lakemaster/sfg-pet-clinic.git</developerConnection>
+        <developerConnection>scm:git:lakemaster@github.com/lakemaster/sfg-pet-clinic.git</developerConnection>
   </scm>
 
 </project>
