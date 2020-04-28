@@ -46,6 +46,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/lakemaster/sfg-pet-clinic</developerConnection>
-  </scm>
+    </scm>
 
 </project>
