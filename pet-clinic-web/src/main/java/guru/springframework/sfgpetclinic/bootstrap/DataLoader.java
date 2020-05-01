@@ -26,7 +26,7 @@ public class DataLoader implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
         PetType dog = new PetType();
         dog.setName("Dog");
@@ -63,7 +63,7 @@ public class DataLoader implements CommandLineRunner {
         Pet mizi = new Pet();
         mizi.setPetType(savedCatPetType);
         mizi.setName("Mizi");
-        mizi.getBirthDate(LocalDate.of(2020, 1, 22);
+        mizi.setBirthDate(LocalDate.of(2020, 1, 22));
         mizi.setOwner(fiona);
         fiona.getPets().add(mizi);
 
