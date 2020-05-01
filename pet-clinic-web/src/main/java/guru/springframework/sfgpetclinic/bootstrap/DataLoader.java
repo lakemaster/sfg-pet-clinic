@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.Owner;
+import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import guru.springframework.sfgpetclinic.services.PetTypeService;
 import guru.springframework.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -34,17 +37,37 @@ public class DataLoader implements CommandLineRunner {
         PetType savedCatPetType = petTypeService.save(cat);
 
 
-        Owner owner1 = new Owner();
-        owner1.setFirstName("Micheal");
-        owner1.setLastName("Weston");
+        Owner mike = new Owner();
+        mike.setFirstName("Micheal");
+        mike.setLastName("Weston");
+        mike.setAddress("123 Brickerel");
+        mike.setCity("Miami");
+        mike.setTelephone("943218902854");
 
-        ownerService.save(owner1);
+        Pet rosco = new Pet();
+        rosco.setPetType(savedDogPetType);
+        rosco.setOwner(mike);
+        rosco.setName("Rosco");
+        rosco.setBirthDate(LocalDate.now());
+        mike.getPets().add(rosco);
 
-        Owner owner2 = new Owner();
-        owner2.setFirstName("Fiona");
-        owner2.setLastName("Glenanne");
+        ownerService.save(mike);
 
-        ownerService.save(owner2);
+        Owner fiona = new Owner();
+        fiona.setFirstName("Fiona");
+        fiona.setLastName("Glenanne");
+        fiona.setAddress("567 Main Street");
+        fiona.setCity("Los Angeles");
+        fiona.setTelephone("349857613");
+
+        Pet mizi = new Pet();
+        mizi.setPetType(savedCatPetType);
+        mizi.setName("Mizi");
+        mizi.getBirthDate(LocalDate.of(2020, 1, 22);
+        mizi.setOwner(fiona);
+        fiona.getPets().add(mizi);
+
+        ownerService.save(fiona);
 
         System.out.println("Loaded Owners ...");
 
