@@ -6,37 +6,20 @@ import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetService;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
-
 @Service
-public class OwnerServicwMap extends AbstractMapService<Owner, Long> implements OwnerService {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetService petService;
 
-    public OwnerServicwMap(PetService petService) {
+    public OwnerServiceMap(PetService petService) {
         this.petService = petService;
     }
 
     @Override
-    public Set<Owner> findAll() {
-        return super.findAll();
-    }
-
-    @Override
-    public void deleteById(Long id) {
-        super.deleteById(id);
-    }
-
-    @Override
-    public void delete(Owner owner) {
-        super.delete(owner);
-    }
-
-    @Override
     public Owner save(Owner owner) {
-        if ( owner != null ) {
+        if (owner != null) {
             owner.getPets().forEach(pet -> {
-                if ( pet.getId() == null ) {
+                if (pet.getId() == null) {
                     Pet savePet = petService.save(pet);
                     pet.setId(savePet.getId());
                 }
@@ -46,10 +29,6 @@ public class OwnerServicwMap extends AbstractMapService<Owner, Long> implements 
         return null;
     }
 
-    @Override
-    public Owner findById(Long id) {
-        return super.findById(id);
-    }
 
     @Override
     public Owner findByLastName(String lastName) {
