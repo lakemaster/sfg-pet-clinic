@@ -16,11 +16,11 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
     @Override
     public Vet save(Vet vet) {
-        if ( vet == null )
+        if (vet == null)
             return null;
 
         vet.getSpecialities().forEach(spec -> {
-            if ( spec.getId() == null ) {
+            if (spec.getId() == null) {
                 spec.setId(specialityService.save(spec).getId());
             }
         });

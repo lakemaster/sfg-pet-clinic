@@ -28,7 +28,7 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
-        if ( petTypeService.findAll().size() == 0 ) {
+        if (petTypeService.findAll().size() == 0) {
             loadData();
         }
     }
