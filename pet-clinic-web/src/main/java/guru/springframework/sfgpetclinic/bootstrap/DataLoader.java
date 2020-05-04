@@ -95,6 +95,17 @@ public class DataLoader implements CommandLineRunner {
 
         visitService.save(visit);
 
+        // only to test Lombok Builder
+        Owner otto = Owner.builder()
+                .firstName("Otto")
+                .lastName("Meier")
+                .telephone("04567 124356")
+                .address("Hauptstr. 1")
+                .address("Techau")
+                .build();
+
+        ownerService.save(otto);
+
         System.out.println("Loaded Owners ...");
 
         Vet sam = new Vet();
