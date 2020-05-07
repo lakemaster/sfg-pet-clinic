@@ -81,7 +81,7 @@ class OwnerSDJpaServiceTest {
 
     @Test
     void findByIdNotFound() {
-        when(ownerRepository.findById(any())).thenReturn(Optional.of(owner1));
+        when(ownerRepository.findById(anyLong())).thenReturn(Optional.empty());
 
         Owner owner = service.findById(3L);
 
