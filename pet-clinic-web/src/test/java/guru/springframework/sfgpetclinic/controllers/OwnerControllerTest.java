@@ -81,7 +81,7 @@ class OwnerControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/owners/1"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.view().name("owner/ownerDetails"))
+                .andExpect(MockMvcResultMatchers.view().name("owners/ownerDetails"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("owner"))
                 .andExpect(MockMvcResultMatchers.model().attribute("owner", Matchers.notNullValue()))
                 .andExpect(MockMvcResultMatchers.model().attribute("owner", Matchers.equalTo(owner1)));
