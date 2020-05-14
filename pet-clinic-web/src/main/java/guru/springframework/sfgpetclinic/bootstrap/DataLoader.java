@@ -48,6 +48,7 @@ public class DataLoader implements CommandLineRunner {
         Speciality radiology = new Speciality();
         radiology.setDescription("Radiology");
         Speciality surgery = new Speciality();
+        surgery.setDescription("Surgery");
         radiology.setDescription("Surgery");
         Speciality dentistry = new Speciality();
         radiology.setDescription("Dentistry");
